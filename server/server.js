@@ -5,7 +5,7 @@ var index = require("./routes/index");
 var math = require("./routes/math");
 var path = require("path");
 
-app.set("port", (process.env.PORT || 5000));
+app.set("port", (process.env.PORT || 4000));
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
