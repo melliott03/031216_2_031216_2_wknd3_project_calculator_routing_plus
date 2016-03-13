@@ -5,9 +5,11 @@ var path = require("path");
 
 
 router.post("/", function(req,res){
+    var answer = eval(req.body.inputItems);
+    // math.eval('sin(45 deg) ^ 2');
     console.log('hello from math.js');
     console.log(req.body);
-    res.send({name: 'foo'});
+    res.send({ans: ''+answer});
 });
 
 

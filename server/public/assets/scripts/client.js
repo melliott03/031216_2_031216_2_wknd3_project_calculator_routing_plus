@@ -1,15 +1,39 @@
 $(document).ready(function (){
   console.log('LOADS');
+
+  $('.clearbtn').on('click', function(){
+    event.preventDefault();
+  $('.FinalOutput').text('');
+  $('.operatorsOperandsEntered').empty();
+  document.getElementById('operatorsOperandsEntered').value = "";
+  });
+
   $('.calcbtn').on('click', function(){
     event.preventDefault();
-
+    // $('.operatorbtn').data('clicked',false);
     var $el = $(this);
     var btnvalue = $el.data('num');
     console.log('data from button:', $el.data('num'));
     $('#operatorsOperandsEntered').val($('#operatorsOperandsEntered').val() + btnvalue);
     console.log("new button's vaulue:", btnvalue);
-
     });
+
+
+    $('.operatorbtn').on('click', function(){
+      event.preventDefault();
+
+      var $el = $(this);
+      var btnvalue = $el.data('num');
+      console.log('data from button:', $el.data('num'));
+      $('#operatorsOperandsEntered').val($('#operatorsOperandsEntered').val() + btnvalue);
+      console.log("new button's vaulue:", btnvalue);
+      // if (!$('#operatorbtn').data('clicked')) {
+      //   $('#operatorbtn').data('clicked',true);
+      // };
+      });
+
+
+
     $('.equalbtn').on('click', function(){
       event.preventDefault();
       var input = $('#operatorsOperandsEntered').val();
@@ -18,7 +42,7 @@ $(document).ready(function (){
       var inputObject = {};
       inputObject.inputItems = inputString;
       console.log("input as a string:", inputObject);
-      var input = $('#operatorsOperandsEntered').empty();
+
 
 
       $.ajax({
@@ -27,9 +51,12 @@ $(document).ready(function (){
           data: inputObject,
           success: function(data){
             console.log("yey! returned from math.js:", data);
-            // function appendDom(data){
-            //
-            // };
+              if(data.ans == "undefined"){
+                $('.FinalOutput').text('');
+              }else{
+                $('.FinalOutput').text(''+data.ans);
+              }
+
           }
       });
   });
