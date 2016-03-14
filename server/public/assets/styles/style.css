@@ -1,30 +1,50 @@
 .entireCalcDiv{
-  width: 400px;
+  width: 450px;
   margin: 30px auto;
   padding: 50px;
-  background-color: gray;
+  background-color: #b8860b;
+  border-radius: 25px;
 }
 .calcbtn {
   width: 72px;
   height: 72px;
-  padding-bottom: 13px;
 }
 .operatorbtn{
   width: 72px;
   height: 72px;
-  padding-bottom: 13px;
+  padding: 5px;
+
 }
 .clearbtn{
+  width: 72px;
+  height: 72px;
+  padding: 5px;
 
 }
 
-.btnspace{
-  color: #3498db;
-  color: rgba(0, 0, 0, 0.0);
-
+.FinalOutput{
+  height: 50px;
+  border-style:outset;
+}
+.buttons{
+  background-color: white;
+  padding-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.numberwell{
+  font-size:  15px;
+  font-weight: bold;
+}
+.btn{
+  padding: 5px;
+}
+.submit{
+  margin: 5px;
 }
 .equalbtn{
   font-weight: bold;
   font-size: 30px;
-  height: 60px;
+  height: 70px;
+  margin: 5px auto;
 }
